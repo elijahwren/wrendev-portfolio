@@ -3,8 +3,9 @@ import { useEffect, useRef } from "react";
 export const RevealOnScroll = ({ children }) => {
 
     const ref = useRef(null);
-
+    // Intersection Observer to reveal elements on scroll
     useEffect(() => {
+        // Check if the ref is set
         const observer = new IntersectionObserver(([entry]) => {
             if (entry.isIntersecting) {
                 ref.current.classList.add("visible");

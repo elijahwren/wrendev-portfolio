@@ -3,13 +3,13 @@ import { RevealOnScroll } from './RevealOnScroll.jsx';
 import emailjs from 'emailjs-com';
 
 export const Contact = () => {
-
+    // state to manage form data
         const [formData, setFormData] = useState({
             name: '',
             email: '',
             message: ''
         });
-
+    // function to handle form submission
     const handleSubmit = (e) => {
         
         e.preventDefault();
@@ -45,6 +45,7 @@ export const Contact = () => {
                 </RevealOnScroll>
 
                 <RevealOnScroll>
+                    // form for contact
                     <form className="space-y-6" onSubmit={handleSubmit}>
                         <div className="relative">
                             <input 
@@ -58,7 +59,7 @@ export const Contact = () => {
                                 onChange={(e) => setFormData({ ...formData, name: e.target.value })}
                             />
                         </div>
-
+                        // input for email
                         <div className="relative">
                             <input 
                                 type="email" 
@@ -71,7 +72,7 @@ export const Contact = () => {
                                 onChange={(e) => setFormData({ ...formData, email: e.target.value })}
                             />
                         </div>
-
+                        // textarea for message
                         <div className="relative">
                             <textarea 
                                 id="message" 
@@ -84,7 +85,7 @@ export const Contact = () => {
                                 onChange={(e) => setFormData({ ...formData, message: e.target.value })}
                             />
                         </div>
-
+                        // submit button
                         <button 
                             type="submit" 
                             className="w-full bg-blue-500 text-white py-3 px-6 rounded font-medium transition relative overflow-hidden hover:-translate-y-0.5 hover:shadow-[0_0_15px_rgba(59, 130, 246, 0.4)]"
